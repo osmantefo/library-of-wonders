@@ -189,6 +189,9 @@ return_to_lobby :: proc(game: ^Game_State, completed: bool) {
 	game.player.velocity_y = 0
 	game.player.grounded = true
 	game.player.is_attacking = false
+	game.player.is_crouching = false
+	game.player.action = .NONE
+	game.player.action_time = 0
 	game.player.is_hurt = false
 	game.player.knockback_x = 0
 	game.floor_index = game.lobby_return_floor

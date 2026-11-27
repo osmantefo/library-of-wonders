@@ -16,8 +16,12 @@ start_level_run :: proc(game: ^Game_State, level_id: int) {
 	game.player.grounded = true
 	game.player.animation_time = 0
 	game.player.is_attacking = false
+	game.player.is_crouching = false
+	game.player.action = .NONE
+	game.player.action_time = 0
 	game.player.is_hurt = false
 	game.player.hurt_time = 0
+	game.player.heal_time = 0
 	game.player.knockback_x = 0
 	game.player.health = game.player.max_health
 	game.player.last_hit_enemy = -1
@@ -124,8 +128,12 @@ set_player_at_checkpoint :: proc(game: ^Game_State, health: int) {
 	player.grounded = true
 	player.is_attacking = false
 	player.attack_time = 0
+	player.is_crouching = false
+	player.action = .NONE
+	player.action_time = 0
 	player.is_hurt = false
 	player.hurt_time = 0
+	player.heal_time = 0
 	player.knockback_x = 0
 	player.health = health
 	player.last_hit_enemy = -1

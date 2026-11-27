@@ -9,8 +9,8 @@ test_player_config_loads_from_data_file :: proc(t: ^testing.T) {
 
     testing.expect(t, config.move_speed > 0)
     testing.expect(t, config.radius > 0)
-    testing.expect_value(t, config.frame_width, 200)
-    testing.expect_value(t, config.frame_height, 200)
+    testing.expect_value(t, config.frame_width, 128)
+    testing.expect_value(t, config.frame_height, 64)
     testing.expect_value(t, config.idle_frame_count, 8)
     testing.expect_value(t, config.run_frame_count, 8)
     testing.expect(t, config.animation_frame_duration > 0)
@@ -19,6 +19,9 @@ test_player_config_loads_from_data_file :: proc(t: ^testing.T) {
     testing.expect(t, config.jump_speed > 0 && config.gravity > 0)
     testing.expect(t, config.coyote_time > 0 && config.jump_buffer_time > 0)
     testing.expect(t, config.jump_cut_multiplier > 0 && config.jump_cut_multiplier < 1)
+    testing.expect(t, config.crouch_move_multiplier > 0 && config.crouch_move_multiplier < 1)
+    testing.expect(t, config.roll_speed > config.move_speed && config.roll_duration > 0)
+    testing.expect(t, config.slide_speed > config.move_speed && config.slide_duration > 0)
     jump_apex_height := config.jump_speed * config.jump_speed / (2 * config.gravity)
     jump_airtime := 2 * config.jump_speed / config.gravity
     testing.expect(t, jump_apex_height >= 300)
@@ -70,6 +73,22 @@ test_platform_landing_and_jump_through :: proc(t: ^testing.T) {
 	player.velocity_y = -100
 	player.grounded = false
 	testing.expect_value(t, resolve_player_platform_landing(&player, player.position.y + 5), false)
+}
+
+@(test)
+test_attack_type_uses_air_and_down_input :: proc(t: ^testing.T) {
+	testing.expect_value(t, player_attack_kind_for_input(false, false, false), Player_Attack_Kind.AIR)
+	testing.expect_value(t, player_attack_kind_for_input(false, false, true), Player_Attack_Kind.PLUNGE)
+	testing.expect_value(t, player_attack_kind_for_input(true, true, true), Player_Attack_Kind.CROUCH)
+	testing.expect_value(t, player_attack_kind_for_input(true, false, true), Player_Attack_Kind.GROUND)
+}
+
+@(test)
+test_attack_rows_are_flipped_to_match_attack_facing :: proc(t: ^testing.T) {
+	testing.expect_value(t, should_flip_player_attack(0, false), false)
+	testing.expect_value(t, should_flip_player_attack(0, true), true)
+	testing.expect_value(t, should_flip_player_attack(4, false), true)
+	testing.expect_value(t, should_flip_player_attack(4, true), false)
 }
 
 @(test)
@@ -302,6 +321,10 @@ test_first_book_death_respawns_at_checkpoint_and_tracks_damage :: proc(t: ^testi
 	apply_player_hit(&game, 3, 5, -1, 100)
 	game.player.invulnerability_time = 0
 	apply_player_hit(&game, 3, 7, -1, 100)
+
+	testing.expect_value(t, game.player.health, 0)
+	testing.expect_value(t, game.player.action, Player_Action.DEATH)
+	update_platformer_player(&game, 0.6)
 
 	testing.expect_value(t, game.player.health, 60)
 	testing.expect_value(t, game.screen, Screen.LEVEL)

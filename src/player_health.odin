@@ -21,12 +21,16 @@ apply_player_hit :: proc(game: ^Game_State, source_enemy: int, damage: int, dire
 	player.invulnerability_time = 0.65
 	player.is_hurt = true
 	player.knockback_x = direction * force
+	player.is_attacking = false
+	player.action = .NONE
 	if player.grounded {
 		player.velocity_y = -player.config.jump_speed * 0.28
 		player.grounded = false
 	}
 	if player.health <= 0 {
-		respawn_at_checkpoint(game)
+		player.action = .DEATH
+		player.action_time = 0
+		player.is_crouching = false
 	}
 }
 
@@ -39,7 +43,11 @@ siphon_last_attacker :: proc(game: ^Game_State, defeated_enemy: int) {
 	if recovered < 1 {
 		recovered = 1
 	}
+	previous_health := player.health
 	player.health = min_int(player.max_health, player.health+recovered)
+	if player.health > previous_health {
+		player.heal_time = 0.72
+	}
 	player.last_hit_enemy = -1
 	player.last_hit_damage = 0
 }

@@ -79,6 +79,8 @@ enter_library :: proc(game: ^Game_State) {
     game.player.velocity_y = 0
     game.player.grounded = true
     game.player.is_attacking = false
+    game.player.is_crouching = false
+    game.player.action = .NONE
     game.player.is_hurt = false
     game.player.health = game.player.max_health
     game.player.last_hit_enemy = -1

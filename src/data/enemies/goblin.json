@@ -1,7 +1,7 @@
 {
   "name": "Goblin",
-  "sprite_path": "assets/texture/Monster_Creatures_Fantasy(Version 1.3)/Monster_Creatures_Fantasy(Version 1.3)/Goblin/Attack3.png",
-  "projectile_path": "assets/texture/Monster_Creatures_Fantasy(Version 1.3)/Monster_Creatures_Fantasy(Version 1.3)/Goblin/Bomb_sprite.png",
+  "sprite_path": "assets/texture/enemies/Goblin/Attack3.png",
+  "projectile_path": "assets/texture/enemies/Goblin/Bomb_sprite.png",
   "frame_width": 150,
   "frame_height": 150,
   "frame_count": 12,

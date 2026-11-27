@@ -1,7 +1,7 @@
 {
   "name": "Flying Eye",
-  "sprite_path": "assets/texture/Monster_Creatures_Fantasy(Version 1.3)/Monster_Creatures_Fantasy(Version 1.3)/Flying eye/Attack3.png",
-  "projectile_path": "assets/texture/Monster_Creatures_Fantasy(Version 1.3)/Monster_Creatures_Fantasy(Version 1.3)/Flying eye/projectile_sprite.png",
+  "sprite_path": "assets/texture/enemies/Flying eye/Attack3.png",
+  "projectile_path": "assets/texture/enemies/Flying eye/projectile_sprite.png",
   "frame_width": 150,
   "frame_height": 150,
   "frame_count": 6,

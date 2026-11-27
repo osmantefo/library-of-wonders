@@ -21,6 +21,11 @@ Player_Config :: struct {
 	coyote_time:                f32,
 	jump_buffer_time:           f32,
 	jump_cut_multiplier:        f32,
+	crouch_move_multiplier:     f32,
+	roll_speed:                 f32,
+	roll_duration:              f32,
+	slide_speed:                f32,
+	slide_duration:             f32,
 	attack_frame_count:         int,
 	attack_frame_duration:      f32,
 	attack_range:               f32,
@@ -57,6 +62,12 @@ load_player_config :: proc() -> Player_Config {
 		config.jump_buffer_time < 0 ||
 		config.jump_cut_multiplier <= 0 ||
 		config.jump_cut_multiplier >= 1 ||
+		config.crouch_move_multiplier <= 0 ||
+		config.crouch_move_multiplier > 1 ||
+		config.roll_speed <= config.move_speed ||
+		config.roll_duration <= 0 ||
+		config.slide_speed <= config.move_speed ||
+		config.slide_duration <= 0 ||
 		config.attack_frame_count <= 0 ||
 		config.attack_frame_duration <= 0 ||
 		config.attack_range <= 0 ||
