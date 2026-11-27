@@ -2,20 +2,47 @@ package main
 
 import rl "vendor:raylib"
 
-Room :: struct {
-    name:       string,
-    bounds:     rl.Rectangle,
-    color:      rl.Color,
-    obstacles:  []rl.Rectangle,
-    exits:      []Doorway,
-    book_ids:   []int,
+ROOM_COUNT :: 8
+HALL_COUNT :: 7
+FLOOR_COUNT :: 3
+BOOKS_PER_HALL :: 2
+
+HALL_NAMES :: [7]string{
+    "Fiction and Literature",
+    "History and Geography",
+    "Science and Nature",
+    "Arts and Music",
+    "Philosophy and Religion",
+    "Travel and Adventure",
+    "Reference and Biography",
 }
 
-Doorway :: struct {
-    target_room: int,
-    trigger:     rl.Rectangle,
-    spawn:       rl.Vector2,
-    label:       string,
+HALL_COLORS :: [7]rl.Color{
+    {37, 32, 61, 255},
+    {43, 34, 51, 255},
+    {29, 43, 57, 255},
+    {49, 34, 57, 255},
+    {37, 43, 54, 255},
+    {43, 39, 54, 255},
+    {31, 43, 49, 255},
+}
+
+Room :: struct {
+    name:       string,
+    color:      rl.Color,
+    is_lobby:   bool,
+    left_room:  int,
+    right_room: int,
+    floor_y:    [3]f32,
+    floor_count: int,
+    stairs:     [2]Staircase,
+    book_ids:   [2]int,
+    book_count: int,
+}
+
+Staircase :: struct {
+    lower_x: f32,
+    upper_x: f32,
 }
 
 World :: struct {
@@ -23,53 +50,95 @@ World :: struct {
     books: []Book_Entrance,
 }
 
-create_world :: proc() -> World {
-    room_a_obstacles := make([]rl.Rectangle, 3, allocator=context.allocator)
-    room_a_obstacles[0] = {x = 110, y = 120, width = 100, height = 34}
-    room_a_obstacles[1] = {x = 430, y = 105, width = 34, height = 150}
-    room_a_obstacles[2] = {x = 270, y = 410, width = 150, height = 34}
-
-    room_b_obstacles := make([]rl.Rectangle, 3, allocator=context.allocator)
-    room_b_obstacles[0] = {x = 760, y = 115, width = 34, height = 170}
-    room_b_obstacles[1] = {x = 940, y = 390, width = 160, height = 34}
-    room_b_obstacles[2] = {x = 680, y = 440, width = 130, height = 34}
-
-    room_a_exits := make([]Doorway, 1, allocator=context.allocator)
-    room_a_exits[0] = {target_room = 1, trigger = {x = 560, y = 205, width = 50, height = 100}, spawn = {660, 255}, label = "Astronomy Wing"}
-    room_b_exits := make([]Doorway, 1, allocator=context.allocator)
-    room_b_exits[0] = {target_room = 0, trigger = {x = 590, y = 205, width = 50, height = 100}, spawn = {540, 255}, label = "Entrance Hall"}
-
-    room_a_books := make([]int, 2, allocator=context.allocator)
-    room_a_books[0] = 0
-    room_a_books[1] = 1
-    room_b_books := make([]int, 1, allocator=context.allocator)
-    room_b_books[0] = 2
-
-    rooms := make([]Room, 2, allocator=context.allocator)
-    rooms[0] = Room{
-        name = "The Entrance Hall",
-        bounds = {x = 0, y = 0, width = 600, height = 520},
-        color = rl.Color{37, 32, 61, 255},
-        obstacles = room_a_obstacles,
-        exits = room_a_exits,
-        book_ids = room_a_books,
-    }
-    rooms[1] = Room{
-        name = "The Astronomy Wing",
-        bounds = {x = 600, y = 0, width = 600, height = 520},
-        color = rl.Color{27, 40, 67, 255},
-        obstacles = room_b_obstacles,
-        exits = room_b_exits,
-        book_ids = room_b_books,
-    }
-
-    books := make([]Book_Entrance, 3, allocator=context.allocator)
-    books[0] = {id = 0, title = "The Clockwork Orchard", subtitle = "A book of curious machines", position = {300, 230}, level_id = 0, unlocked = true, completed = false}
-    books[1] = {id = 1, title = "The Drowned Kingdom", subtitle = "A memory beneath the waves", position = {350, 330}, level_id = 1, unlocked = true, completed = false}
-    books[2] = {id = 2, title = "Atlas of the Starless Sky", subtitle = "A sealed celestial record", position = {850, 260}, level_id = 2, unlocked = false, completed = false}
-    return World{rooms = rooms, books = books}
+HALL_BOOK_TITLES :: [7][2]string{
+    {"The Clockwork Orchard", "The Drowned Kingdom"},
+    {"Atlas of Empires", "The Cartographer's Chronicle"},
+    {"Field Guide to Impossible Beasts", "The Greenhouse at World's End"},
+    {"The Silent Orchestra", "Gallery of Living Color"},
+    {"Questions for the Stars", "The Lantern of First Light"},
+    {"Beyond the Western Map", "The Road Between Worlds"},
+    {"Lives of Inventors", "The Unwritten Index"},
 }
 
-current_room_ptr :: proc(world: ^World, room_index: int) -> ^Room {
-    return &world.rooms[room_index]
+HALL_BOOK_DESCRIPTIONS :: [7][2]string{
+    {"Explore a garden of brass trees and broken timepieces.", "Find the lost route through a sunken royal library."},
+    {"Trace the rise and fall of kingdoms lost to time.", "Follow the maps drawn by a restless royal historian."},
+    {"Meet creatures found only in unfinished stories.", "Discover a garden growing beyond the edge of the world."},
+    {"Restore a concert hall where every instrument is silent.", "Step inside paintings that change when no one is looking."},
+    {"Seek answers to questions older than the archive.", "Carry a light through the first stories ever told."},
+    {"Travel beyond the last known edge of the map.", "Follow a road that connects places that should not meet."},
+    {"Uncover the hidden lives of history's great inventors.", "Find the missing entry that describes every other book."},
+}
+
+create_world :: proc() -> World {
+    hall_names := HALL_NAMES
+    hall_colors := HALL_COLORS
+    hall_book_titles := HALL_BOOK_TITLES
+    hall_book_descriptions := HALL_BOOK_DESCRIPTIONS
+    rooms := make([]Room, ROOM_COUNT, allocator=context.allocator)
+    books := make([]Book_Entrance, HALL_COUNT * BOOKS_PER_HALL, allocator=context.allocator)
+
+    rooms[0] = Room{
+        name = "The Grand Lobby",
+        color = rl.Color{28, 25, 45, 255},
+        is_lobby = true,
+        left_room = 1,
+        right_room = HALL_COUNT,
+        floor_y = {570, 0, 0},
+        floor_count = 1,
+    }
+
+    for hall in 0..<HALL_COUNT {
+        room_index := hall + 1
+        left_room := room_index + 1
+        if room_index == HALL_COUNT {
+            left_room = 0
+        }
+        right_room := room_index - 1
+        if room_index == 1 {
+            right_room = 0
+        }
+
+        room := Room{
+            name = hall_names[hall],
+            color = hall_colors[hall],
+            left_room = left_room,
+            right_room = right_room,
+            floor_y = {570, 405, 240},
+            floor_count = FLOOR_COUNT,
+            stairs = {
+                {lower_x = 350, upper_x = 485},
+                {lower_x = 930, upper_x = 795},
+            },
+            book_count = BOOKS_PER_HALL,
+        }
+
+        first_book_id := hall * BOOKS_PER_HALL
+        room.book_ids[0] = first_book_id
+        room.book_ids[1] = first_book_id + 1
+        rooms[room_index] = room
+
+        books[first_book_id] = Book_Entrance{
+            id = first_book_id,
+            room_id = room_index,
+            floor_index = 0,
+            title = hall_book_titles[hall][0],
+            subtitle = hall_book_descriptions[hall][0],
+            position = {600, room.floor_y[0] - 30},
+            level_id = first_book_id,
+            unlocked = true,
+        }
+        books[first_book_id + 1] = Book_Entrance{
+            id = first_book_id + 1,
+            room_id = room_index,
+            floor_index = 1,
+            title = hall_book_titles[hall][1],
+            subtitle = hall_book_descriptions[hall][1],
+            position = {675, room.floor_y[1] - 30},
+            level_id = first_book_id + 1,
+            unlocked = true,
+        }
+    }
+
+    return World{rooms = rooms, books = books}
 }

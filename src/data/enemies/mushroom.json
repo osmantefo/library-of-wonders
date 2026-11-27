@@ -1,0 +1,23 @@
+{
+  "name": "Mushroom",
+  "sprite_path": "assets/texture/Monster_Creatures_Fantasy(Version 1.3)/Monster_Creatures_Fantasy(Version 1.3)/Mushroom/Attack3.png",
+  "projectile_path": "assets/texture/Monster_Creatures_Fantasy(Version 1.3)/Monster_Creatures_Fantasy(Version 1.3)/Mushroom/Projectile_sprite.png",
+  "frame_width": 150,
+  "frame_height": 150,
+  "frame_count": 11,
+  "projectile_frame_width": 50,
+  "projectile_frame_height": 50,
+  "projectile_frame_count": 8,
+  "hits_to_kill": 1,
+  "move_speed": 52.0,
+  "collision_width": 58.0,
+  "collision_height": 72.0,
+  "hover_height": 0.0,
+  "attack_range": 460.0,
+  "aggro_range": 460.0,
+  "attack_damage": 6,
+  "projectile_damage": 6,
+  "projectile_speed": 250.0,
+  "patrol_range": 0.0,
+  "orbit_radius": 0.0
+}

@@ -1,0 +1,23 @@
+{
+  "move_speed": 850.0,
+  "radius": 13.0,
+  "frame_width": 200,
+  "frame_height": 200,
+  "idle_frame_count": 8,
+  "run_frame_count": 8,
+  "animation_frame_duration": 0.12,
+  "render_scale": 1.2,
+  "ground_anchor": 0.63,
+  "jump_speed": 850.0,
+  "gravity": 1050.0,
+  "coyote_time": 0.12,
+  "jump_buffer_time": 0.14,
+  "jump_cut_multiplier": 0.48,
+  "attack_frame_count": 6,
+  "attack_frame_duration": 0.075,
+  "attack_range": 105.0,
+  "attack_cooldown": 0.42,
+  "hit_knockback": 320.0,
+  "max_health": 100,
+  "siphon_fraction": 0.45
+}

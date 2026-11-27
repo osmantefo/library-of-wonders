@@ -1,0 +1,60 @@
+{
+	"books": [
+		{
+			"cleared": true,
+			"relics_found": 1
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		},
+		{
+			"cleared": false,
+			"relics_found": 0
+		}
+	]
+}
