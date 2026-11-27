@@ -120,13 +120,13 @@ render_level :: proc(game: ^Game_State) {
     }
     rl.EndMode2D()
 
-    ui_text(game.assets.ui_font, strings.clone_to_cstring(level.name, context.temp_allocator), 28, 20, 24, COLOR_GOLD)
+    ui_text(game.assets.ui_font, strings.clone_to_cstring(level.name, context.temp_allocator), 520, 20, 24, COLOR_GOLD)
     render_player_health(game)
     if game.active_level == 0 {
         ui_text(game.assets.ui_font, strings.clone_to_cstring("Move: A/D    Jump: Space/W/Up    Attack: J/X    Esc: pause", context.temp_allocator), 28, WINDOW_HEIGHT - 40, 18, COLOR_TEXT)
-        ui_text(game.assets.ui_font, strings.clone_to_cstring("Reach the glowing arch at the end of the corridor", context.temp_allocator), 28, 56, 16, COLOR_MUTED)
+        ui_text(game.assets.ui_font, strings.clone_to_cstring("Reach the glowing arch at the end of the corridor", context.temp_allocator), 520, 56, 16, COLOR_MUTED)
     } else {
-        ui_text(game.assets.ui_font, strings.clone_to_cstring("LEVEL PLACEHOLDER - ESC returns to the lobby", context.temp_allocator), 28, 56, 18, COLOR_MUTED)
+        ui_text(game.assets.ui_font, strings.clone_to_cstring("LEVEL PLACEHOLDER - ESC returns to the lobby", context.temp_allocator), 520, 56, 18, COLOR_MUTED)
         ui_text(game.assets.ui_font, strings.clone_to_cstring(level.description, context.temp_allocator), 28, WINDOW_HEIGHT - 40, 18, COLOR_TEXT)
     }
 

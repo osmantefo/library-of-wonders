@@ -22,6 +22,8 @@ start_level_run :: proc(game: ^Game_State, level_id: int) {
 	game.player.is_hurt = false
 	game.player.hurt_time = 0
 	game.player.heal_time = 0
+	game.player.health_feedback = .NONE
+	game.player.health_feedback_time = 0
 	game.player.knockback_x = 0
 	game.player.health = game.player.max_health
 	game.player.last_hit_enemy = -1
@@ -134,6 +136,8 @@ set_player_at_checkpoint :: proc(game: ^Game_State, health: int) {
 	player.is_hurt = false
 	player.hurt_time = 0
 	player.heal_time = 0
+	player.health_feedback = .NONE
+	player.health_feedback_time = 0
 	player.knockback_x = 0
 	player.health = health
 	player.last_hit_enemy = -1
@@ -173,7 +177,7 @@ render_pause_menu :: proc(game: ^Game_State) {
 	for i in 0..<len(options) {
 		render_flow_option(game, options[i], i, game.pause_choice, i32(326+i*52))
 	}
-	ui_text(game.assets.ui_font, strings.clone_to_cstring("Esc to resume", context.temp_allocator), 495, 520, 17, COLOR_MUTED)
+	render_flow_text(game, strings.clone_to_cstring("Esc to resume", context.temp_allocator), 495, 520, 17, rl.Color{255, 255, 255, 255})
 }
 
 render_level_results :: proc(game: ^Game_State) {
@@ -182,14 +186,14 @@ render_level_results :: proc(game: ^Game_State) {
 	total_seconds := int(run.elapsed_time)
 	minutes := total_seconds / 60
 	seconds := total_seconds % 60
-	ui_text(game.assets.ui_font, strings.clone_to_cstring(LEVELS[game.active_level].name, context.temp_allocator), 420, 238, 24, COLOR_GOLD)
-	ui_text(game.assets.ui_font, strings.clone_to_cstring(fmt.aprintf("Time: %02d:%02d", minutes, seconds), context.temp_allocator), 430, 284, 21, COLOR_TEXT)
-	ui_text(game.assets.ui_font, strings.clone_to_cstring(fmt.aprintf("Damage taken: %d", run.damage_taken), context.temp_allocator), 430, 318, 21, COLOR_TEXT)
+	render_flow_text(game, strings.clone_to_cstring(LEVELS[game.active_level].name, context.temp_allocator), 420, 238, 24, rl.Color{255, 232, 173, 255})
+	render_flow_text(game, strings.clone_to_cstring(fmt.aprintf("Time: %02d:%02d", minutes, seconds), context.temp_allocator), 430, 284, 21, rl.Color{255, 255, 255, 255})
+	render_flow_text(game, strings.clone_to_cstring(fmt.aprintf("Damage taken: %d", run.damage_taken), context.temp_allocator), 430, 318, 21, rl.Color{255, 255, 255, 255})
 	relic_status := "Secret relic: not found"
 	if run.relic_collected {
 		relic_status = "Secret relic: found"
 	}
-	ui_text(game.assets.ui_font, strings.clone_to_cstring(relic_status, context.temp_allocator), 430, 352, 21, COLOR_TEXT)
+	render_flow_text(game, strings.clone_to_cstring(relic_status, context.temp_allocator), 430, 352, 21, rl.Color{255, 255, 255, 255})
 	options := [2]string{"Return to Library", "Replay Book"}
 	for i in 0..<len(options) {
 		render_flow_option(game, options[i], i, game.results_choice, i32(420+i*48))
@@ -198,16 +202,22 @@ render_level_results :: proc(game: ^Game_State) {
 
 render_flow_panel :: proc(game: ^Game_State, title: string) {
 	rl.DrawRectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, rl.Color{6, 8, 19, 190})
-	rl.DrawRectangle(330, 170, 620, 410, rl.Color{18, 19, 39, 248})
-	rl.DrawRectangleLinesEx({330, 170, 620, 410}, 3, COLOR_GOLD)
-	ui_text(game.assets.ui_font, strings.clone_to_cstring(title, context.temp_allocator), 420, 200, 30, COLOR_GOLD)
+	panel := rl.Rectangle{330, 170, 620, 410}
+	rl.DrawRectangleRec(panel, rl.Color{21, 17, 34, 235})
+	draw_ui_nine_slice(game.assets.ui_inventory, {16, 48, 48, 48}, panel, 8, 24, rl.WHITE)
+	render_flow_text(game, strings.clone_to_cstring(title, context.temp_allocator), 420, 200, 30, rl.Color{255, 232, 173, 255})
 }
 
 render_flow_option :: proc(game: ^Game_State, label: string, index, selected: int, y: i32) {
-	color := COLOR_MUTED
+	color := rl.Color{255, 255, 255, 255}
 	if selected == index {
-		color = COLOR_ACCENT
-		ui_text(game.assets.ui_font, strings.clone_to_cstring(">", context.temp_allocator), 418, y, 22, color)
+		color = rl.Color{255, 239, 177, 255}
+		render_flow_text(game, strings.clone_to_cstring(">", context.temp_allocator), 418, y, 22, color)
 	}
-	ui_text(game.assets.ui_font, strings.clone_to_cstring(label, context.temp_allocator), 448, y, 22, color)
+	render_flow_text(game, strings.clone_to_cstring(label, context.temp_allocator), 448, y, 22, color)
+}
+
+render_flow_text :: proc(game: ^Game_State, text: cstring, x, y, size: i32, color: rl.Color) {
+	ui_text(game.assets.ui_font, text, x+2, y+2, size, rl.Color{16, 10, 23, 255})
+	ui_text(game.assets.ui_font, text, x, y, size, color)
 }

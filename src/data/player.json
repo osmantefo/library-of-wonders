@@ -6,7 +6,7 @@
   "idle_frame_count": 8,
   "run_frame_count": 8,
   "animation_frame_duration": 0.12,
-  "render_scale": 2.4,
+  "render_scale": 2.2,
   "ground_anchor": 0.86,
   "jump_speed": 850.0,
   "gravity": 1050.0,

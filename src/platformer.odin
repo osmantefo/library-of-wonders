@@ -14,6 +14,7 @@ update_platformer_player :: proc(game: ^Game_State, dt: f32) {
 	player.is_hurt = player.hurt_time > 0
 	player.hurt_time = max_f32(0, player.hurt_time-dt)
 	player.heal_time = max_f32(0, player.heal_time-dt)
+	player.health_feedback_time = max_f32(0, player.health_feedback_time-dt)
 	player.invulnerability_time = max_f32(0, player.invulnerability_time-dt)
 	player.attack_cooldown = max_f32(0, player.attack_cooldown-dt)
 	if player.is_attacking {

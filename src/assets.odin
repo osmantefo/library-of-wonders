@@ -42,10 +42,38 @@ UI_FONT_PATH :: "assets/fonts/monogram/monogram/ttf/monogram-extended.ttf"
 TITLE_FONT_PATH :: "assets/fonts/monogram/monogram/ttf/monogram-extended-italic.ttf"
 GAME_MUSIC_PATH :: "assets/audio/top-down-fantasy-1.ogg"
 CORRIDOR_ASSET_ROOT :: "assets/texture/Cold Corridors Files/Cold Corridors Files/Assets/Layers/"
+LIBRARIAN_IDLE_PATH :: "assets/texture/enemies/Wizard Pack/Idle.png"
+LIBRARIAN_RUN_PATH :: "assets/texture/enemies/Wizard Pack/Run.png"
+UI_SPRITE_PATH :: "assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/GUISprite.png"
+UI_INVENTORY_PATH :: "assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/Inventory.png"
+UI_ANIMATION_COUNT :: 6
+UI_Animation :: enum {
+	MINIMUM_DAMAGE,
+	MEDIUM_DAMAGE,
+	CRITICAL_DAMAGE,
+	HEALTH_REGENERATION,
+	GENERIC_REGENERATION,
+	GENERIC_SPARKS,
+}
+UI_ANIMATION_PATHS :: [UI_ANIMATION_COUNT]string{
+	"assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/AnimationSheets/MinimumDamage/MinimumDamage-Sheet.png",
+	"assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/AnimationSheets/MediumDamage/MediumDamage-Sheet.png",
+	"assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/AnimationSheets/CriticalDamage/CriticalDamage-Sheet.png",
+	"assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/AnimationSheets/HealthRegeneration/LifeHealing-Sheet.png",
+	"assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/AnimationSheets/GenericRegeneration/GenericRegeneration-Sheet.png",
+	"assets/UI/CrimsonFantasyGU_fixed/CrimsonFantasyGUI/AnimationSheets/GenericSparks/GenericSparks-Sheet.png",
+}
+UI_ANIMATION_FRAME_HEIGHTS :: [UI_ANIMATION_COUNT]int{16, 16, 16, 16, 32, 32}
+UI_ANIMATION_FRAME_COUNTS :: [UI_ANIMATION_COUNT]int{50, 26, 20, 13, 9, 5}
 
 Game_Assets :: struct {
 	menu_background: rl.Texture2D,
 	player_animations: [PLAYER_ANIMATION_COUNT]rl.Texture2D,
+	librarian_idle: rl.Texture2D,
+	librarian_run: rl.Texture2D,
+	ui_sprite: rl.Texture2D,
+	ui_inventory: rl.Texture2D,
+	ui_animations: [UI_ANIMATION_COUNT]rl.Texture2D,
 	corridor_back:   rl.Texture2D,
 	corridor_far:    rl.Texture2D,
 	corridor_middle: rl.Texture2D,
@@ -68,6 +96,9 @@ load_game_assets :: proc(config: Player_Config, creature_catalog: [CREATURE_COUN
 	animation_paths := PLAYER_ANIMATION_PATHS
 	animation_columns := PLAYER_ANIMATION_COLUMNS
 	animation_rows := PLAYER_ANIMATION_ROWS
+	ui_animation_paths := UI_ANIMATION_PATHS
+	ui_animation_frame_heights := UI_ANIMATION_FRAME_HEIGHTS
+	ui_animation_frame_counts := UI_ANIMATION_FRAME_COUNTS
 	assets := Game_Assets{
 		menu_background = rl.LoadTexture(cstring(MENU_TEXTURE_PATH)),
 		corridor_back = rl.LoadTexture(cstring(CORRIDOR_ASSET_ROOT + "back.png")),
@@ -76,6 +107,10 @@ load_game_assets :: proc(config: Player_Config, creature_catalog: [CREATURE_COUN
 		corridor_near = rl.LoadTexture(cstring(CORRIDOR_ASSET_ROOT + "near.png")),
 		corridor_foreground = rl.LoadTexture(cstring(CORRIDOR_ASSET_ROOT + "foreground.png")),
 		corridor_torch = rl.LoadTexture(cstring("assets/texture/Cold Corridors Files/Cold Corridors Files/Assets/Torch/torch-sheet.png")),
+		librarian_idle = rl.LoadTexture(cstring(LIBRARIAN_IDLE_PATH)),
+		librarian_run = rl.LoadTexture(cstring(LIBRARIAN_RUN_PATH)),
+		ui_sprite = rl.LoadTexture(cstring(UI_SPRITE_PATH)),
+		ui_inventory = rl.LoadTexture(cstring(UI_INVENTORY_PATH)),
 		ui_font = rl.LoadFontEx(cstring(UI_FONT_PATH), 48, nil, 0),
 		title_font = rl.LoadFontEx(cstring(TITLE_FONT_PATH), 48, nil, 0),
 		render_target = rl.LoadRenderTexture(WINDOW_WIDTH, WINDOW_HEIGHT),
@@ -86,6 +121,13 @@ load_game_assets :: proc(config: Player_Config, creature_catalog: [CREATURE_COUN
 		assets.player_animations[i] = rl.LoadTexture(strings.clone_to_cstring(path, context.temp_allocator))
 		if !rl.IsTextureValid(assets.player_animations[i]) {
 			fmt.panicf("Could not load player animation: %s", path)
+		}
+	}
+	for i in 0..<UI_ANIMATION_COUNT {
+		path := ui_animation_paths[i]
+		assets.ui_animations[i] = rl.LoadTexture(strings.clone_to_cstring(path, context.temp_allocator))
+		if !rl.IsTextureValid(assets.ui_animations[i]) {
+			fmt.panicf("Could not load UI animation: %s", path)
 		}
 	}
 
@@ -104,6 +146,18 @@ load_game_assets :: proc(config: Player_Config, creature_catalog: [CREATURE_COUN
 	if !rl.IsMusicValid(assets.music) {
 		panic("Could not load game music: " + GAME_MUSIC_PATH)
 	}
+	if !rl.IsTextureValid(assets.librarian_idle) {
+		panic("Could not load librarian idle sprite: " + LIBRARIAN_IDLE_PATH)
+	}
+	if !rl.IsTextureValid(assets.librarian_run) {
+		panic("Could not load librarian run sprite: " + LIBRARIAN_RUN_PATH)
+	}
+	if !rl.IsTextureValid(assets.ui_sprite) {
+		panic("Could not load UI sprites: " + UI_SPRITE_PATH)
+	}
+	if !rl.IsTextureValid(assets.ui_inventory) {
+		panic("Could not load inventory UI sprites: " + UI_INVENTORY_PATH)
+	}
 	corridor_textures := [6]rl.Texture2D{
 		assets.corridor_back, assets.corridor_far, assets.corridor_middle,
 		assets.corridor_near, assets.corridor_foreground, assets.corridor_torch,
@@ -118,6 +172,16 @@ load_game_assets :: proc(config: Player_Config, creature_catalog: [CREATURE_COUN
 		if texture.width < i32(config.frame_width*animation_columns[i]) ||
 		   texture.height < i32(config.frame_height*animation_rows[i]) {
 			fmt.panicf("Player animation sheet dimensions do not match its 128x64 frame grid: %s", animation_paths[i])
+		}
+	}
+	if assets.librarian_idle.width < 231*6 || assets.librarian_idle.height < 190 ||
+	   assets.librarian_run.width < 231*8 || assets.librarian_run.height < 190 {
+		panic("Librarian sprite sheets do not match the 231x190 frame layout")
+	}
+	for i in 0..<UI_ANIMATION_COUNT {
+		texture := assets.ui_animations[i]
+		if texture.width < 64 || texture.height < i32(ui_animation_frame_heights[i]*ui_animation_frame_counts[i]) {
+			fmt.panicf("UI animation sheet dimensions do not match its frame layout: %s", ui_animation_paths[i])
 		}
 	}
 	idle := assets.player_animations[int(Player_Animation.IDLE)]
@@ -158,6 +222,13 @@ load_game_assets :: proc(config: Player_Config, creature_catalog: [CREATURE_COUN
 	for texture in assets.player_animations {
 		rl.SetTextureFilter(texture, .POINT)
 	}
+	rl.SetTextureFilter(assets.librarian_idle, .POINT)
+	rl.SetTextureFilter(assets.librarian_run, .POINT)
+	rl.SetTextureFilter(assets.ui_sprite, .POINT)
+	rl.SetTextureFilter(assets.ui_inventory, .POINT)
+	for texture in assets.ui_animations {
+		rl.SetTextureFilter(texture, .POINT)
+	}
 	for creature in assets.creatures {
 		rl.SetTextureFilter(creature.animation, .POINT)
 		rl.SetTextureFilter(creature.projectile, .POINT)
@@ -176,6 +247,13 @@ update_game_audio :: proc(assets: Game_Assets) {
 unload_game_assets :: proc(assets: Game_Assets) {
 	rl.UnloadTexture(assets.menu_background)
 	for texture in assets.player_animations {
+		rl.UnloadTexture(texture)
+	}
+	rl.UnloadTexture(assets.librarian_idle)
+	rl.UnloadTexture(assets.librarian_run)
+	rl.UnloadTexture(assets.ui_sprite)
+	rl.UnloadTexture(assets.ui_inventory)
+	for texture in assets.ui_animations {
 		rl.UnloadTexture(texture)
 	}
 	rl.UnloadTexture(assets.corridor_back)

@@ -92,6 +92,59 @@ test_attack_rows_are_flipped_to_match_attack_facing :: proc(t: ^testing.T) {
 }
 
 @(test)
+test_librarian_walk_moves_slowly_toward_target_and_turns :: proc(t: ^testing.T) {
+	librarian := Librarian{
+		position = {600, 570},
+		target_x = 500,
+		walk_speed = 40,
+		is_walking = true,
+	}
+
+	update_librarian(&librarian, 0.5)
+
+	testing.expect_value(t, librarian.position.x, 580.0)
+	testing.expect_value(t, librarian.facing_left, true)
+	testing.expect_value(t, librarian.is_walking, true)
+}
+
+@(test)
+test_damage_and_healing_update_hud_feedback :: proc(t: ^testing.T) {
+	game := Game_State{
+		player = Player{
+			health = 100,
+			max_health = 100,
+			last_hit_enemy = -1,
+			config = Player_Config{siphon_fraction = 0.5},
+		},
+	}
+
+	apply_player_hit(&game, 2, 25, 1, 0)
+	testing.expect_value(t, game.player.health_feedback, Player_Health_Feedback.DAMAGE)
+	testing.expect_value(t, game.player.health_feedback_amount, 25)
+	testing.expect_value(t, game.player.health_feedback_tier, UI_Animation.MEDIUM_DAMAGE)
+	testing.expect_value(t, game.player.health_feedback_start_ratio, 1.0)
+	testing.expect_value(t, game.player.health_feedback_end_ratio, 0.75)
+
+	siphon_last_attacker(&game, 2)
+	testing.expect_value(t, game.player.health, 87)
+	testing.expect_value(t, game.player.health_feedback, Player_Health_Feedback.HEAL)
+	testing.expect_value(t, game.player.health_feedback_amount, 12)
+	testing.expect_value(t, game.player.health_feedback_tier, UI_Animation.MEDIUM_DAMAGE)
+	testing.expect_value(t, game.player.health_feedback_start_ratio, 0.75)
+	testing.expect_value(t, game.player.health_feedback_end_ratio, 0.87)
+}
+
+@(test)
+test_health_meter_frame_and_damage_tiers :: proc(t: ^testing.T) {
+	testing.expect_value(t, health_meter_frame(1, 25), 0)
+	testing.expect_value(t, health_meter_frame(0.5, 25), 12)
+	testing.expect_value(t, health_meter_frame(0, 25), 24)
+	testing.expect_value(t, health_feedback_tier_for_amount(10, 100), UI_Animation.MINIMUM_DAMAGE)
+	testing.expect_value(t, health_feedback_tier_for_amount(16, 100), UI_Animation.MEDIUM_DAMAGE)
+	testing.expect_value(t, health_feedback_tier_for_amount(34, 100), UI_Animation.CRITICAL_DAMAGE)
+}
+
+@(test)
 test_selected_enemies_spawn_on_platforms :: proc(t: ^testing.T) {
 	config := load_player_config()
 	catalog := load_creature_catalog()

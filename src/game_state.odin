@@ -19,6 +19,7 @@ Game_State :: struct {
     pause_choice: int,
     results_choice: int,
     player:       Player,
+	librarian:    Librarian,
     assets:       Game_Assets,
     creature_catalog: [CREATURE_COUNT]Creature_Config,
     level_run:    Level_Run,
@@ -56,6 +57,7 @@ new_game :: proc(assets: Game_Assets, player_config: Player_Config, creature_cat
         should_quit = false,
         title_choice = 0,
         player = player,
+		librarian = new_librarian(world.rooms[0].floor_y[0]),
         assets = assets,
         creature_catalog = creature_catalog,
         progression = progression,
@@ -83,6 +85,8 @@ enter_library :: proc(game: ^Game_State) {
     game.player.action = .NONE
     game.player.is_hurt = false
     game.player.health = game.player.max_health
+	game.player.health_feedback = .NONE
+	game.player.health_feedback_time = 0
     game.player.last_hit_enemy = -1
     game.player.last_hit_damage = 0
     game.player.invulnerability_time = 0

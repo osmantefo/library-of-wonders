@@ -17,6 +17,12 @@ Player_Attack_Kind :: enum {
 	CROUCH,
 }
 
+Player_Health_Feedback :: enum {
+	NONE,
+	DAMAGE,
+	HEAL,
+}
+
 Player :: struct {
 	position:           rl.Vector2,
 	radius:              f32,
@@ -49,6 +55,12 @@ Player :: struct {
 	invulnerability_time: f32,
 	last_hit_enemy:       int,
 	last_hit_damage:      int,
+	health_feedback:      Player_Health_Feedback,
+	health_feedback_time: f32,
+	health_feedback_amount: int,
+	health_feedback_tier: UI_Animation,
+	health_feedback_start_ratio: f32,
+	health_feedback_end_ratio: f32,
 }
 
 update_player :: proc(player: ^Player, dt: f32) {
