@@ -4,7 +4,9 @@
 10/9/2026,  antigravity,    gemini 3.1, {lobby state, start screen state, options ui, level scene and state}
 10/22/2026,  antigravity,    gemini 3.1, {assets sources, loading assets, fixing bugs, player sprites animation}
 10/23/2026,  antigravity,    gemini 3.1, {loading enemy sprites, fixing the level loop, enemy responses, collisions}
+10/23/2026, antigravity,    gemini 3.1, {Added background sound, menu screen loading, fixed main menu UI}
 11/5/2026, antigravity,    gemini 3.1, {added enemy types, enemy states, player health bar and hit/collison bounce}
+11/6/2026, antigravity,    gemini 3.1, {player movement, player hp syphon, fixed enemy spawn and first level}
 11/12/2026, antigravity,    gemini 3.1, {enemy data files, AI logic, difficulty and path following fixes}
 
 
