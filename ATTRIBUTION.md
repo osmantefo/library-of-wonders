@@ -8,6 +8,9 @@
 11/5/2026, antigravity,    gemini 3.1, {added enemy types, enemy states, player health bar and hit/collison bounce}
 11/6/2026, antigravity,    gemini 3.1, {player movement, player hp syphon, fixed enemy spawn and first level}
 11/12/2026, antigravity,    gemini 3.1, {enemy data files, AI logic, difficulty and path following fixes}
+11/26/2026, antigravity,    gemini 3.1, {Loaded new player sprite, new player movements and physics, crouching, plunge attack, and collison/enemy response}
+11/26/2026, antigravity,    gemini 3.1, {Added the librarian npc, dialogues and interaction, fixed movement. Health and player stats UI in levels}
+
 
 
 Assets disclosure:
