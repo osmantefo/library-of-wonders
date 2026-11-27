@@ -1,0 +1,165 @@
+file,category,source,event,loop,seconds,prompt
+Ambience/catacombs_loop_01.wav,Ambience,Ambience,Catacombs,yes,14,"Low cavernous rumble with continuous water dripping, faint bone rattling, and distant soft moans"
+Ambience/catacombs_loop_02.wav,Ambience,Ambience,Catacombs,yes,14,"Low cavernous rumble with continuous water dripping, faint bone rattling, and distant soft moans"
+Ambience/catacombs_loop_03.wav,Ambience,Ambience,Catacombs,yes,14,"Low cavernous rumble with continuous water dripping, faint bone rattling, and distant soft moans"
+Ambience/cursed_swamp_loop_01.wav,Ambience,Ambience,Cursed swamp,yes,14,"Continuous bubbling wet mud, soft buzzing insects, distant frog croaks, and a low unsettling ominous drone"
+Ambience/cursed_swamp_loop_02.wav,Ambience,Ambience,Cursed swamp,yes,14,"Continuous bubbling wet mud, soft buzzing insects, distant frog croaks, and a low unsettling ominous drone"
+Ambience/cursed_swamp_loop_03.wav,Ambience,Ambience,Cursed swamp,yes,14,"Continuous bubbling wet mud, soft buzzing insects, distant frog croaks, and a low unsettling ominous drone"
+Ambience/distant_battlefield_loop_01.wav,Ambience,Ambience,Distant battlefield,yes,14,"Cold wind rushing steadily with distant faint metal sword clashes, muffled war drums, and faint indistinct war cries"
+Ambience/distant_battlefield_loop_02.wav,Ambience,Ambience,Distant battlefield,yes,14,"Cold wind rushing steadily with distant faint metal sword clashes, muffled war drums, and faint indistinct war cries"
+Ambience/distant_battlefield_loop_03.wav,Ambience,Ambience,Distant battlefield,yes,14,"Cold wind rushing steadily with distant faint metal sword clashes, muffled war drums, and faint indistinct war cries"
+Ambience/rain_loop_01.wav,Ambience,Ambience,Rain,yes,12,Continuous cold rain pattering on ancient stone ruins and splashing into wet puddles with distant low thunder rumble
+Ambience/rain_loop_02.wav,Ambience,Ambience,Rain,yes,12,Continuous cold rain pattering on ancient stone ruins and splashing into wet puddles with distant low thunder rumble
+Ambience/rain_loop_03.wav,Ambience,Ambience,Rain,yes,12,Continuous cold rain pattering on ancient stone ruins and splashing into wet puddles with distant low thunder rumble
+Ambience/ruined_cathedral_loop_01.wav,Ambience,Ambience,Ruined cathedral,yes,14,Steady low cold wind rushing through broken glass apertures with sparse distant water drips
+Ambience/ruined_cathedral_loop_02.wav,Ambience,Ambience,Ruined cathedral,yes,14,Steady low cold wind rushing through broken glass apertures with sparse distant water drips
+Ambience/ruined_cathedral_loop_03.wav,Ambience,Ambience,Ruined cathedral,yes,14,Steady low cold wind rushing through broken glass apertures with sparse distant water drips
+Ambience/wind_loop_01.wav,Ambience,Ambience,Wind,yes,12,"Steady cold wind rushing over ash plains and stone ruins, low continuous draft"
+Ambience/wind_loop_02.wav,Ambience,Ambience,Wind,yes,12,"Steady cold wind rushing over ash plains and stone ruins, low continuous draft"
+Ambience/wind_loop_03.wav,Ambience,Ambience,Wind,yes,12,"Steady cold wind rushing over ash plains and stone ruins, low continuous draft"
+Enemies/ancient_dragon_breathe_fire_01.wav,Enemies,Ancient Dragon,Breathe fire,no,4,Massive furnace roar of fire breathing out with intense searing flames and crackling embers
+Enemies/ancient_dragon_breathe_fire_02.wav,Enemies,Ancient Dragon,Breathe fire,no,4,Massive furnace roar of fire breathing out with intense searing flames and crackling embers
+Enemies/ancient_dragon_breathe_fire_03.wav,Enemies,Ancient Dragon,Breathe fire,no,4,Massive furnace roar of fire breathing out with intense searing flames and crackling embers
+Enemies/ancient_dragon_flap_wings_01.wav,Enemies,Ancient Dragon,Flap wings,no,2,Heavy flap of large leathery wings with a deep powerful whooshing air gust
+Enemies/ancient_dragon_flap_wings_02.wav,Enemies,Ancient Dragon,Flap wings,no,2,Heavy flap of large leathery wings with a deep powerful whooshing air gust
+Enemies/ancient_dragon_flap_wings_03.wav,Enemies,Ancient Dragon,Flap wings,no,2,Heavy flap of large leathery wings with a deep powerful whooshing air gust
+Enemies/ancient_dragon_roar_01.wav,Enemies,Ancient Dragon,Roar,no,4,Colossal creature guttural roar with massive low frequency rumble and deep resonance
+Enemies/ancient_dragon_roar_02.wav,Enemies,Ancient Dragon,Roar,no,4,Colossal creature guttural roar with massive low frequency rumble and deep resonance
+Enemies/ancient_dragon_roar_03.wav,Enemies,Ancient Dragon,Roar,no,4,Colossal creature guttural roar with massive low frequency rumble and deep resonance
+Enemies/giant_knight_die_01.wav,Enemies,Giant Knight,Die,no,4,A deep guttural monster roar fading into a massive heavy metal armor crash and thud
+Enemies/giant_knight_die_02.wav,Enemies,Giant Knight,Die,no,4,A deep guttural monster roar fading into a massive heavy metal armor crash and thud
+Enemies/giant_knight_die_03.wav,Enemies,Giant Knight,Die,no,4,A deep guttural monster roar fading into a massive heavy metal armor crash and thud
+Enemies/giant_knight_footstep_loop_01.wav,Enemies,Giant Knight,Footstep,yes,8,"massive metallic impacts on stone with heavy plate armor clanking at regular slow intervals, seamless loop"
+Enemies/giant_knight_footstep_loop_02.wav,Enemies,Giant Knight,Footstep,yes,8,"massive metallic impacts on stone with heavy plate armor clanking at regular slow intervals, seamless loop"
+Enemies/giant_knight_footstep_loop_03.wav,Enemies,Giant Knight,Footstep,yes,8,"massive metallic impacts on stone with heavy plate armor clanking at regular slow intervals, seamless loop"
+Enemies/giant_knight_roar_01.wav,Enemies,Giant Knight,Roar,no,4,Deep guttural low frequency roar of a massive corrupted giant with resonant armor plates
+Enemies/giant_knight_roar_02.wav,Enemies,Giant Knight,Roar,no,4,Deep guttural low frequency roar of a massive corrupted giant with resonant armor plates
+Enemies/giant_knight_roar_03.wav,Enemies,Giant Knight,Roar,no,4,Deep guttural low frequency roar of a massive corrupted giant with resonant armor plates
+Enemies/giant_knight_slam_01.wav,Enemies,Giant Knight,Slam,no,3,"A massive heavy iron greatsword slams onto stone, deep boom with cracking rock and crumbling debris"
+Enemies/giant_knight_slam_02.wav,Enemies,Giant Knight,Slam,no,3,"A massive heavy iron greatsword slams onto stone, deep boom with cracking rock and crumbling debris"
+Enemies/giant_knight_slam_03.wav,Enemies,Giant Knight,Slam,no,3,"A massive heavy iron greatsword slams onto stone, deep boom with cracking rock and crumbling debris"
+Enemies/hollow_soldier_attack_01.wav,Enemies,Hollow Soldier,Attack,no,2,Dry raspy undead snarl with a heavy metallic sword swoosh and rattling rusty chainmail
+Enemies/hollow_soldier_attack_02.wav,Enemies,Hollow Soldier,Attack,no,2,Dry raspy undead snarl with a heavy metallic sword swoosh and rattling rusty chainmail
+Enemies/hollow_soldier_attack_03.wav,Enemies,Hollow Soldier,Attack,no,2,Dry raspy undead snarl with a heavy metallic sword swoosh and rattling rusty chainmail
+Enemies/hollow_soldier_die_01.wav,Enemies,Hollow Soldier,Die,no,2,Dry rasping air exhale with heavy rusted chainmail clattering and body thudding onto ground
+Enemies/hollow_soldier_die_02.wav,Enemies,Hollow Soldier,Die,no,2,Dry rasping air exhale with heavy rusted chainmail clattering and body thudding onto ground
+Enemies/hollow_soldier_die_03.wav,Enemies,Hollow Soldier,Die,no,2,Dry rasping air exhale with heavy rusted chainmail clattering and body thudding onto ground
+Enemies/hollow_soldier_hurt_01.wav,Enemies,Hollow Soldier,Hurt,no,2,Heavy blunt impact sound followed by a hoarse dry rasping groan and rattling rusted chainmail
+Enemies/hollow_soldier_hurt_02.wav,Enemies,Hollow Soldier,Hurt,no,2,Heavy blunt impact sound followed by a hoarse dry rasping groan and rattling rusted chainmail
+Enemies/hollow_soldier_hurt_03.wav,Enemies,Hollow Soldier,Hurt,no,2,Heavy blunt impact sound followed by a hoarse dry rasping groan and rattling rusted chainmail
+Enemies/plague_hound_bite_01.wav,Enemies,Plague Hound,Bite,no,2,"A ferocious dog snarl with a rapid lunge and heavy jaw snap, sharp teeth clacking together"
+Enemies/plague_hound_bite_02.wav,Enemies,Plague Hound,Bite,no,2,"A ferocious dog snarl with a rapid lunge and heavy jaw snap, sharp teeth clacking together"
+Enemies/plague_hound_bite_03.wav,Enemies,Plague Hound,Bite,no,2,"A ferocious dog snarl with a rapid lunge and heavy jaw snap, sharp teeth clacking together"
+Enemies/plague_hound_die_01.wav,Enemies,Plague Hound,Die,no,2,"A wounded hound yelps and whimpers, collapsing heavily to the ground with a final ragged breath"
+Enemies/plague_hound_die_02.wav,Enemies,Plague Hound,Die,no,2,"A wounded hound yelps and whimpers, collapsing heavily to the ground with a final ragged breath"
+Enemies/plague_hound_die_03.wav,Enemies,Plague Hound,Die,no,2,"A wounded hound yelps and whimpers, collapsing heavily to the ground with a final ragged breath"
+Enemies/plague_hound_growl_01.wav,Enemies,Plague Hound,Growl,no,2,Low wet growl of a rabid hound snarling with dripping wet saliva
+Enemies/plague_hound_growl_02.wav,Enemies,Plague Hound,Growl,no,2,Low wet growl of a rabid hound snarling with dripping wet saliva
+Enemies/plague_hound_growl_03.wav,Enemies,Plague Hound,Growl,no,2,Low wet growl of a rabid hound snarling with dripping wet saliva
+Interface/click_01.wav,Interface,Interface,Click,no,2,short muted metallic tick of an old iron gear mechanism
+Interface/click_02.wav,Interface,Interface,Click,no,2,short muted metallic tick of an old iron gear mechanism
+Interface/click_03.wav,Interface,Interface,Click,no,2,short muted metallic tick of an old iron gear mechanism
+Interface/enemy_felled_01.wav,Interface,Interface,Enemy felled,no,4,a solemn choir and deep orchestral brass swell sounding triumphant yet melancholic
+Interface/enemy_felled_02.wav,Interface,Interface,Enemy felled,no,4,a solemn choir and deep orchestral brass swell sounding triumphant yet melancholic
+Interface/enemy_felled_03.wav,Interface,Interface,Enemy felled,no,4,a solemn choir and deep orchestral brass swell sounding triumphant yet melancholic
+Interface/error_01.wav,Interface,Interface,Error,no,2,A low dull thud with a short muted metallic buzz
+Interface/error_02.wav,Interface,Interface,Error,no,2,A low dull thud with a short muted metallic buzz
+Interface/error_03.wav,Interface,Interface,Error,no,2,A low dull thud with a short muted metallic buzz
+Interface/level_up_01.wav,Interface,Interface,Level up,no,3,a warm rising tonal swell accompanied by soft metallic bell chimes
+Interface/level_up_02.wav,Interface,Interface,Level up,no,3,a warm rising tonal swell accompanied by soft metallic bell chimes
+Interface/level_up_03.wav,Interface,Interface,Level up,no,3,a warm rising tonal swell accompanied by soft metallic bell chimes
+Interface/open_menu_01.wav,Interface,Interface,Open menu,no,2,Soft low parchment paper rustle with a subtle dark metal chime tone
+Interface/open_menu_02.wav,Interface,Interface,Open menu,no,2,Soft low parchment paper rustle with a subtle dark metal chime tone
+Interface/open_menu_03.wav,Interface,Interface,Open menu,no,2,Soft low parchment paper rustle with a subtle dark metal chime tone
+Interface/pick_up_item_01.wav,Interface,Interface,Pick up item,no,2,soft metallic ethereal shimmer with a faint ghostly whisper
+Interface/pick_up_item_02.wav,Interface,Interface,Pick up item,no,2,soft metallic ethereal shimmer with a faint ghostly whisper
+Interface/pick_up_item_03.wav,Interface,Interface,Pick up item,no,2,soft metallic ethereal shimmer with a faint ghostly whisper
+Interface/you_died_01.wav,Interface,Interface,You died,no,4,A deep low brass horn chord with a heavy bass drum impact fading into silence
+Interface/you_died_02.wav,Interface,Interface,You died,no,4,A deep low brass horn chord with a heavy bass drum impact fading into silence
+Interface/you_died_03.wav,Interface,Interface,You died,no,4,A deep low brass horn chord with a heavy bass drum impact fading into silence
+Music/bonfire_rest_loop_01.wav,Music,Music,Bonfire rest,yes,20,slow soft harp plucks playing a sad minor key melody over a gentle ambient pad
+Music/bonfire_rest_loop_02.wav,Music,Music,Bonfire rest,yes,20,slow soft harp plucks playing a sad minor key melody over a gentle ambient pad
+Music/bonfire_rest_loop_03.wav,Music,Music,Bonfire rest,yes,20,slow soft harp plucks playing a sad minor key melody over a gentle ambient pad
+Music/boss_battle_loop_01.wav,Music,Music,Boss battle,yes,30,"Dark orchestral music loop with heavy war drums, rhythmic low strings, and Latin choir in minor key at 120 bpm"
+Music/boss_battle_loop_02.wav,Music,Music,Boss battle,yes,30,"Dark orchestral music loop with heavy war drums, rhythmic low strings, and Latin choir in minor key at 120 bpm"
+Music/boss_battle_loop_03.wav,Music,Music,Boss battle,yes,30,"Dark orchestral music loop with heavy war drums, rhythmic low strings, and Latin choir in minor key at 120 bpm"
+Music/lament_loop_01.wav,Music,Music,Lament,yes,30,slow mournful string orchestra with distant female voice singing a tragic melancholic minor melody
+Music/lament_loop_02.wav,Music,Music,Lament,yes,30,slow mournful string orchestra with distant female voice singing a tragic melancholic minor melody
+Music/lament_loop_03.wav,Music,Music,Lament,yes,30,slow mournful string orchestra with distant female voice singing a tragic melancholic minor melody
+Music/main_theme_loop_01.wav,Music,Music,Main theme,yes,30,a slow melancholic solo cello melody accompanied by sparse quiet piano notes in a minor key
+Music/main_theme_loop_02.wav,Music,Music,Main theme,yes,30,a slow melancholic solo cello melody accompanied by sparse quiet piano notes in a minor key
+Music/main_theme_loop_03.wav,Music,Music,Main theme,yes,30,a slow melancholic solo cello melody accompanied by sparse quiet piano notes in a minor key
+Player/ashen_knight_die_01.wav,Player,Ashen Knight,Die,no,3,A human male dying groan followed by heavy steel plate armor crashing onto a stone floor and settling
+Player/ashen_knight_die_02.wav,Player,Ashen Knight,Die,no,3,A human male dying groan followed by heavy steel plate armor crashing onto a stone floor and settling
+Player/ashen_knight_die_03.wav,Player,Ashen Knight,Die,no,3,A human male dying groan followed by heavy steel plate armor crashing onto a stone floor and settling
+Player/ashen_knight_dodge_roll_01.wav,Player,Ashen Knight,Dodge roll,no,2,"Steel plate armor clattering, cloth swoosh, and a heavy body thud on stone floor"
+Player/ashen_knight_drink_flask_01.wav,Player,Ashen Knight,Drink flask,no,2,"A cork popping off a small glass flask, liquid gulping, followed by a soft warm magical shimmer"
+Player/ashen_knight_drink_flask_02.wav,Player,Ashen Knight,Drink flask,no,2,"A cork popping off a small glass flask, liquid gulping, followed by a soft warm magical shimmer"
+Player/ashen_knight_drink_flask_03.wav,Player,Ashen Knight,Drink flask,no,2,"A cork popping off a small glass flask, liquid gulping, followed by a soft warm magical shimmer"
+Player/ashen_knight_footsteps_loop_01.wav,Player,Ashen Knight,Footsteps,yes,2.35,"Heavy armored footstep on cold stone, plate armor and chainmail clank with each step"
+Player/ashen_knight_heavy_attack_01.wav,Player,Ashen Knight,Heavy attack,no,2,A deep heavy whoosh of a large two-handed sword swing with a strained male warrior grunt
+Player/ashen_knight_heavy_attack_02.wav,Player,Ashen Knight,Heavy attack,no,2,A deep heavy whoosh of a large two-handed sword swing with a strained male warrior grunt
+Player/ashen_knight_heavy_attack_03.wav,Player,Ashen Knight,Heavy attack,no,2,A deep heavy whoosh of a large two-handed sword swing with a strained male warrior grunt
+Player/ashen_knight_hurt_01.wav,Player,Ashen Knight,Hurt,no,1,muffled male pain grunt inside a steel helmet mixed with a blade hitting metal plate armor
+Player/ashen_knight_hurt_02.wav,Player,Ashen Knight,Hurt,no,1,muffled male pain grunt inside a steel helmet mixed with a blade hitting metal plate armor
+Player/ashen_knight_hurt_03.wav,Player,Ashen Knight,Hurt,no,1,muffled male pain grunt inside a steel helmet mixed with a blade hitting metal plate armor
+Player/ashen_knight_light_attack_01.wav,Player,Ashen Knight,Light attack,no,1,fast steel longsword swing whooshing through the air with plate armor rustle
+Player/ashen_knight_light_attack_02.wav,Player,Ashen Knight,Light attack,no,1,fast steel longsword swing whooshing through the air with plate armor rustle
+Player/ashen_knight_light_attack_03.wav,Player,Ashen Knight,Light attack,no,1,fast steel longsword swing whooshing through the air with plate armor rustle
+Player/ashen_knight_parry_01.wav,Player,Ashen Knight,Parry,no,1,heavy steel sword parrying a steel blade with a sharp ringing metallic clang
+Player/ashen_knight_parry_02.wav,Player,Ashen Knight,Parry,no,1,heavy steel sword parrying a steel blade with a sharp ringing metallic clang
+Player/ashen_knight_parry_03.wav,Player,Ashen Knight,Parry,no,1,heavy steel sword parrying a steel blade with a sharp ringing metallic clang
+Player/ashen_knight_shield_block_01.wav,Player,Ashen Knight,Shield block,no,1,"A steel sword violently strikes a thick wooden shield with an iron rim, heavy wood thunk and metal rattle"
+Player/ashen_knight_shield_block_02.wav,Player,Ashen Knight,Shield block,no,1,"A steel sword violently strikes a thick wooden shield with an iron rim, heavy wood thunk and metal rattle"
+Player/ashen_knight_shield_block_03.wav,Player,Ashen Knight,Shield block,no,1,"A steel sword violently strikes a thick wooden shield with an iron rim, heavy wood thunk and metal rattle"
+Sorcery/dark_sorcery_cast_01.wav,Sorcery,Dark Sorcery,Cast,no,2,Cold hollow whoosh of void energy releasing with eerie whispers and a deep sub bass rumble
+Sorcery/dark_sorcery_cast_02.wav,Sorcery,Dark Sorcery,Cast,no,2,Cold hollow whoosh of void energy releasing with eerie whispers and a deep sub bass rumble
+Sorcery/dark_sorcery_cast_03.wav,Sorcery,Dark Sorcery,Cast,no,2,Cold hollow whoosh of void energy releasing with eerie whispers and a deep sub bass rumble
+Sorcery/fire_sorcery_cast_01.wav,Sorcery,Fire Sorcery,Cast,no,2,sudden flame ignition expanding into a deep roaring fire with sharp crackling embers
+Sorcery/fire_sorcery_cast_02.wav,Sorcery,Fire Sorcery,Cast,no,2,sudden flame ignition expanding into a deep roaring fire with sharp crackling embers
+Sorcery/fire_sorcery_cast_03.wav,Sorcery,Fire Sorcery,Cast,no,2,sudden flame ignition expanding into a deep roaring fire with sharp crackling embers
+Sorcery/fire_sorcery_explode_01.wav,Sorcery,Fire Sorcery,Explode,no,2,Deep fireball explosion against a stone wall with debris impact and crackling embers falling
+Sorcery/fire_sorcery_explode_02.wav,Sorcery,Fire Sorcery,Explode,no,2,Deep fireball explosion against a stone wall with debris impact and crackling embers falling
+Sorcery/fire_sorcery_explode_03.wav,Sorcery,Fire Sorcery,Explode,no,2,Deep fireball explosion against a stone wall with debris impact and crackling embers falling
+Sorcery/healing_miracle_cast_01.wav,Sorcery,Healing Miracle,Cast,no,3,Soft sacred choir swell blending with warm shimmering metallic chimes
+Sorcery/healing_miracle_cast_02.wav,Sorcery,Healing Miracle,Cast,no,3,Soft sacred choir swell blending with warm shimmering metallic chimes
+Sorcery/healing_miracle_cast_03.wav,Sorcery,Healing Miracle,Cast,no,3,Soft sacred choir swell blending with warm shimmering metallic chimes
+Weapons/critical_blow_blood_splatter_01.wav,Weapons,Critical Blow,Blood splatter,no,2,"Heavy steel blade stabbing deep into flesh, followed by a wet blood splatter onto stone"
+Weapons/critical_blow_blood_splatter_02.wav,Weapons,Critical Blow,Blood splatter,no,2,"Heavy steel blade stabbing deep into flesh, followed by a wet blood splatter onto stone"
+Weapons/critical_blow_blood_splatter_03.wav,Weapons,Critical Blow,Blood splatter,no,2,"Heavy steel blade stabbing deep into flesh, followed by a wet blood splatter onto stone"
+Weapons/critical_blow_bone_crack_01.wav,Weapons,Critical Blow,Bone crack,no,2,Heavy wet crunch of bones breaking and snapping under a violent impact
+Weapons/critical_blow_bone_crack_02.wav,Weapons,Critical Blow,Bone crack,no,2,Heavy wet crunch of bones breaking and snapping under a violent impact
+Weapons/critical_blow_bone_crack_03.wav,Weapons,Critical Blow,Bone crack,no,2,Heavy wet crunch of bones breaking and snapping under a violent impact
+Weapons/longbow_arrow_impact_01.wav,Weapons,Longbow,Arrow impact,no,2,"Heavy iron arrow hitting wooden shield and soft wet flesh, ending with a quivering shaft vibration"
+Weapons/longbow_arrow_impact_02.wav,Weapons,Longbow,Arrow impact,no,2,"Heavy iron arrow hitting wooden shield and soft wet flesh, ending with a quivering shaft vibration"
+Weapons/longbow_arrow_impact_03.wav,Weapons,Longbow,Arrow impact,no,2,"Heavy iron arrow hitting wooden shield and soft wet flesh, ending with a quivering shaft vibration"
+Weapons/longbow_draw_01.wav,Weapons,Longbow,Draw,no,2,"Slowly drawing a heavy wooden longbow, wood creaking and bowstring tightening under tension"
+Weapons/longbow_draw_02.wav,Weapons,Longbow,Draw,no,2,"Slowly drawing a heavy wooden longbow, wood creaking and bowstring tightening under tension"
+Weapons/longbow_draw_03.wav,Weapons,Longbow,Draw,no,2,"Slowly drawing a heavy wooden longbow, wood creaking and bowstring tightening under tension"
+Weapons/longbow_shoot_01.wav,Weapons,Longbow,Shoot,no,2,A deep wooden bowstring twang and a heavy arrow whooshing quickly through air
+Weapons/longbow_shoot_02.wav,Weapons,Longbow,Shoot,no,2,A deep wooden bowstring twang and a heavy arrow whooshing quickly through air
+Weapons/longbow_shoot_03.wav,Weapons,Longbow,Shoot,no,2,A deep wooden bowstring twang and a heavy arrow whooshing quickly through air
+Weapons/longsword_hit_armor_01.wav,Weapons,Longsword,Hit armor,no,2,Heavy steel longsword striking thick steel plate armor with a sharp metallic clank and dull ring
+Weapons/longsword_hit_armor_02.wav,Weapons,Longsword,Hit armor,no,2,Heavy steel longsword striking thick steel plate armor with a sharp metallic clank and dull ring
+Weapons/longsword_hit_armor_03.wav,Weapons,Longsword,Hit armor,no,2,Heavy steel longsword striking thick steel plate armor with a sharp metallic clank and dull ring
+Weapons/longsword_hit_flesh_01.wav,Weapons,Longsword,Hit flesh,no,1,"sharp steel edge slicing heavy raw meat, wet visceral impact with fine liquid spray"
+Weapons/longsword_hit_flesh_02.wav,Weapons,Longsword,Hit flesh,no,1,"sharp steel edge slicing heavy raw meat, wet visceral impact with fine liquid spray"
+Weapons/longsword_hit_flesh_03.wav,Weapons,Longsword,Hit flesh,no,1,"sharp steel edge slicing heavy raw meat, wet visceral impact with fine liquid spray"
+World/bonfire_crackle_loop_01.wav,World,Bonfire,Crackle,yes,12,"Continuous gentle crackle of a small bonfire with soft flames and light popping embers, seamless loop"
+World/bonfire_crackle_loop_02.wav,World,Bonfire,Crackle,yes,12,"Continuous gentle crackle of a small bonfire with soft flames and light popping embers, seamless loop"
+World/bonfire_crackle_loop_03.wav,World,Bonfire,Crackle,yes,12,"Continuous gentle crackle of a small bonfire with soft flames and light popping embers, seamless loop"
+World/bonfire_kindle_01.wav,World,Bonfire,Kindle,no,3,"Soft whoosh of fire ignition, flames catching on dry ash and embers with a faint low hum"
+World/bonfire_kindle_02.wav,World,Bonfire,Kindle,no,3,"Soft whoosh of fire ignition, flames catching on dry ash and embers with a faint low hum"
+World/bonfire_kindle_03.wav,World,Bonfire,Kindle,no,3,"Soft whoosh of fire ignition, flames catching on dry ash and embers with a faint low hum"
+World/cathedral_door_open_01.wav,World,Cathedral Door,Open,no,3,Massive ancient oak door bound in iron slowly creaking open with heavy groaning metal hinges
+World/cathedral_door_open_02.wav,World,Cathedral Door,Open,no,3,Massive ancient oak door bound in iron slowly creaking open with heavy groaning metal hinges
+World/cathedral_door_open_03.wav,World,Cathedral Door,Open,no,3,Massive ancient oak door bound in iron slowly creaking open with heavy groaning metal hinges
+World/fog_gate_pass_01.wav,World,Fog Gate,Pass,no,3,A cold airy whoosh of rushing mist with a deep ominous low bass swell
+World/fog_gate_pass_02.wav,World,Fog Gate,Pass,no,3,A cold airy whoosh of rushing mist with a deep ominous low bass swell
+World/fog_gate_pass_03.wav,World,Fog Gate,Pass,no,3,A cold airy whoosh of rushing mist with a deep ominous low bass swell
+World/treasure_chest_open_01.wav,World,Treasure Chest,Open,no,2,"Metal latch clacking open, heavy old wooden chest lid lifting with a deep rusty iron creak"
+World/treasure_chest_open_02.wav,World,Treasure Chest,Open,no,2,"Metal latch clacking open, heavy old wooden chest lid lifting with a deep rusty iron creak"
+World/treasure_chest_open_03.wav,World,Treasure Chest,Open,no,2,"Metal latch clacking open, heavy old wooden chest lid lifting with a deep rusty iron creak"
+World/war_drum_beat_loop_01.wav,World,War Drum,Beat,yes,10,Distant massive leather war drums beating a slow steady rhythm with deep heavy booms
+World/war_drum_beat_loop_02.wav,World,War Drum,Beat,yes,10,Distant massive leather war drums beating a slow steady rhythm with deep heavy booms
+World/war_drum_beat_loop_03.wav,World,War Drum,Beat,yes,10,Distant massive leather war drums beating a slow steady rhythm with deep heavy booms

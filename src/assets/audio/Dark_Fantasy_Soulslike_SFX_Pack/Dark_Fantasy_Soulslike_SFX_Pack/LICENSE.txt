@@ -1,0 +1,40 @@
+Dark Fantasy Soulslike SFX Pack - License
+by Gomo Sounds (https://gomosounds.com)
+
+You MAY:
+- Use these sounds in your games, apps, videos and other projects, free or commercial,
+  including games you sell.
+- Edit, cut, mix and layer them inside your project.
+
+You MUST:
+- Credit Gomo Sounds in your game or project credits, for example:
+  "Sound effects: Gomo Sounds (gomosounds.com)"
+
+You may NOT:
+- Resell or redistribute the sounds as standalone files, in sound packs, sound banks or
+  libraries, edited or not.
+- Claim to be the original author of the sounds.
+- Use the sounds to train or improve AI models.
+
+About the sounds:
+These sounds were generated with AI on Gomo Sounds, using Stable Audio by Stability AI under
+the Stability AI Community License (https://stability.ai/community-license-agreement). Your
+use must also follow that license and the Stability AI Acceptable Use Policy.
+
+AI-generated sounds may not be unique: someone else may get a similar result, and depending on
+the law in your country they may not be protected by copyright. Listen to each sound before
+using it.
+
+These terms follow the Gomo Sounds Terms of Use: https://gomosounds.com/terms
+
+---
+
+Licença (português)
+
+Pode: usar em jogos e projetos, grátis ou comerciais (inclusive jogos vendidos), e editar os
+sons dentro do projeto.
+Precisa: citar o Gomo Sounds nos créditos ("Efeitos sonoros: Gomo Sounds (gomosounds.com)").
+Não pode: revender ou redistribuir os sons como arquivo avulso (pacotes, bancos ou bibliotecas),
+dizer que é autor deles, nem usá-los para treinar modelos de IA.
+Os sons foram gerados com IA no Gomo Sounds (Stable Audio, sob a Stability AI Community License).
+Termos completos: https://gomosounds.com/terms
